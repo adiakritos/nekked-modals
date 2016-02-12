@@ -1,0 +1,22 @@
+<my-modal modal-name="checkIn" modal-title="Check In" width="350" top="20">
+  <form class="stacked-form" name="checkInForm" novalidate>
+    <div ng-controller="statusActionsCtrl">
+      <label>Weight</label>
+      <input type="number" ng-model="weight" name="weight" placeholder="Ex. 168" required>
+      <div ng-show="checkInForm.$submitted || checkInForm.weight.$touched">
+        <p class="input-error-msg" ng-show="checkInForm.weight.$error.required">Please enter a weight.</p>
+      </div>
+      <label>Body Fat Percent</label>
+      <input type="number" ng-model="body_fat_pct" name="body_fat_pct" placeholder="Ex. 12.5" required>
+      <div ng-show="checkInForm.$submitted || checkInForm.body_fat_pct.$touched">
+        <p class="input-error-msg" ng-show="checkInForm.body_fat_pct.$error.required">Please enter a body fat percentage.</p>
+      </div>
+      <label>Notes</label>
+      <textarea type="text" ng-model="notes" name="notes" placeholder="Write some quick notes to remember here."></textarea>
+      <div class="form-footer">
+        <button ng-disabled="checkIn.$invalid" class="btn btn-blue btn-medium" name="check-in" ng-click="submit(checkInForm)" value="Check In">Check In</button>
+        <button class="btn btn-cancel btn-medium" type="reset" ng-click="toggleModal('checkIn')" name="cancel">Cancel</button>
+      </div>
+    </div>
+  </form>
+</my-modal>

@@ -29,7 +29,7 @@ Use the directive in your code like this:
 
 *top*         - distance in pixels the modal sits from the top of the browser window.
 
-#### MIT License
+##### MIT License
 
 Copyright (c) 2016 Nicholas Restrepo
 
